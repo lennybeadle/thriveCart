@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Acme;
 
+use Acme\Product;
 use Acme\OfferStrategyInterface;
 
 final class BuyOneRedWidgetHalfPriceOffer implements OfferStrategyInterface
@@ -17,7 +18,7 @@ final class BuyOneRedWidgetHalfPriceOffer implements OfferStrategyInterface
             return 0.0;
         }
 
-        $redWidgetPrice = $count > 0 ? $redWidgets[0]->price : 0.0;
+        $redWidgetPrice = $redWidgets[0]->price;
         $pairs = intdiv($count, 2);
         $discount = $pairs * ($redWidgetPrice / 2);
 

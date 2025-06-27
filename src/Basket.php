@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace Acme;
 
+use Acme\Product;
+use Acme\ProductCatalogueInterface;
+use Acme\DeliveryChargeStrategyInterface;
+use Acme\OfferStrategyInterface;
+
 final class Basket
 {
     /** @var Product[] */
