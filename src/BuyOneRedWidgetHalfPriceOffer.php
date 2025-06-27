@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Acme;
 
+use Acme\OfferStrategyInterface;
+
 final class BuyOneRedWidgetHalfPriceOffer implements OfferStrategyInterface
 {
     public function apply(array $products): float

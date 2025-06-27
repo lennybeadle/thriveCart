@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Acme;
 
+use Acme\DeliveryChargeStrategyInterface;
+
 final class DeliveryChargeStrategy implements DeliveryChargeStrategyInterface
 {
     public function getDeliveryCharge(float $subtotal): float
