@@ -7,7 +7,7 @@ final class BuyOneRedWidgetHalfPriceOffer implements OfferStrategyInterface
 {
     public function apply(array $products): float
     {
-        $redWidgets = array_filter($products, fn(Product $p) => $p->code === 'R01');
+        $redWidgets = array_values(array_filter($products, fn(Product $p) => $p->code === 'R01'));
         $count = count($redWidgets);
         $discount = 0.0;
 

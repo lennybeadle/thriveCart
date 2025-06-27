@@ -12,6 +12,9 @@ final class InMemoryProductCatalogue implements ProductCatalogueInterface
     {
         $this->products = [];
         foreach ($products as $product) {
+            if (!$product instanceof Product) {
+                throw new \InvalidArgumentException('All products must be Product instances');
+            }
             $this->products[$product->code] = $product;
         }
     }
